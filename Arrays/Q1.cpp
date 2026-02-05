@@ -1,5 +1,5 @@
 // Reverse an Array
-// Difficulty: EasyAccuracy: 55.32%Submissions: 269K+Points: 2Average Time: 5m
+// Difficulty: Easy
 // You are given an array of integers arr[]. You have to reverse the given array.
 
 // Note: Modify the array in place.
