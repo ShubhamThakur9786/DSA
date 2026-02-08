@@ -2,7 +2,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 1. create a single node in linkedlist with data and pointer => class of Node create karo and instance create karke data and next address print karo
+// 1. create a single node in linkedlist with data and pointer =>
+// class of Node create karo
+// and instance create karke data and next address print karo
+
 // class Node
 // {
 // public:
@@ -23,7 +26,8 @@ using namespace std;
 //     cout << node1->next << endl;
 // }
 
-// 2. InsertAtHead in linkedList, traverse a linkedList, insertAtTail in linkedlist, insertAtMiddle in linkedlist and delete any node in linkedlist
+// 2. InsertAtHead in linkedList, traverse a linkedList, insertAtTail in linkedlist,
+// insertAtMiddle in linkedlist and delete any node in linkedlist
 class Node
 {
 public:
