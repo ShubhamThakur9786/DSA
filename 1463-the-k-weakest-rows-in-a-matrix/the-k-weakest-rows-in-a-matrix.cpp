@@ -1,33 +1,40 @@
-bool sortBySecond(pair<int, int>& a, pair<int, int>& b) {
-    if (a.second == b.second)
-        return a.first < b.first;
-    return a.second < b.second;
-}
-
 class Solution {
 public:
-    vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
-        vector<pair<int, int>> vec;  //row, countofone
+    int binarySearch(vector<int> &arr) {
+        int st = 0;
+        int end = arr.size()-1;
+        int count = arr.size();
 
-        for(int i=0; i<mat.size(); i++) {
-            int countOne = 0;
-            for(int j=0; j<mat[0].size(); j++) {
-                if(mat[i][j] == 0) {
-                    break;
-                }
-                else {
-                    countOne++;
-                }
+        while(st <= end) {
+            int mid = st + (end-st)/2;
+
+            if(arr[mid] == 0) {
+                count = mid;
+                end = mid-1;
             }
-            vec.push_back({i, countOne});
+            else {
+                st = mid+1;
+            }
         }
 
-        sort(vec.begin(), vec.end(), sortBySecond);
+        return count;
+    }
+    vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
+        vector<pair<int, int>> vec;
 
+        for(int i=0; i<mat.size(); i++) {
+            int countSoldier = binarySearch(mat[i]);
+            vec.push_back({countSoldier, i});
+        }
+
+        sort(vec.begin(), vec.end());
         vector<int> ans;
         for(int i=0; i<k; i++) {
-            ans.push_back(vec[i].first);
+            ans.push_back(vec[i].second);
         }
         return ans;
     }
 };
+
+
+
