@@ -5,8 +5,8 @@ public:
         int r = nums.size()-1;
         int resultIdx = 0;
         while(l <= r) {
-            while(l < r && nums[l] == nums[l+1]) l++;
-            while(r > l && nums[r] == nums[r-1]) r--;
+            while(l+1 < r && nums[l] == nums[l+1]) l++;
+            while(r-1 > l && nums[r] == nums[r-1]) r--;
             int mid = (l+r)/2;
             if(nums[mid] < nums[resultIdx]) {
                 resultIdx = mid;
